@@ -1,126 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eva, Eu Te Amo 💖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nic 💖</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(180deg, #ffb6c1, #ff69b4);
-            color: #fff;
-            text-align: center;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffb6c1, #ff69b4);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-        .container {
-            padding: 30px 18px;
-            max-width: 480px;
-            margin: auto;
-        }
+.container {
+    padding: 30px 18px;
+    max-width: 480px;
+    margin: auto;
+}
 
-        .heart {
-            font-size: 3.5em;
-            animation: pulse 1.5s infinite;
-            margin-top: 10px;
-        }
+.heart {
+    font-size: 3.5em;
+    animation: pulse 1.5s infinite;
+}
 
-        h1 {
-            font-size: 2.4em;
-            margin: 15px 0 5px;
-        }
+h1 {
+    font-size: 2.2em;
+    margin: 15px 0;
+}
 
-        h2 {
-            font-size: 1.2em;
-            font-weight: normal;
-            margin-bottom: 25px;
-        }
+.card {
+    background: rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 22px;
+    margin-top: 20px;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 20px;
-            padding: 18px;
-            margin: 15px 0;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
+.buttons {
+    margin-top: 20px;
+}
 
-        p {
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
+button {
+    font-size: 1.1em;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
 
-        .music {
-            margin: 25px 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
+.yes {
+    background: #ff1493;
+    color: #fff;
+}
 
-        footer {
-            margin: 30px 0 15px;
-            font-size: 0.85em;
-            opacity: 0.9;
-        }
+.no {
+    background: #fff;
+    color: #ff1493;
+    position: relative;
+}
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-    </style>
+.space-hearts {
+    font-size: 1.4em;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="heart">💗</div>
+<div class="container">
+    <div class="heart">>�div>
+    <h1>Nic, eu te amo</h1>
 
-        <h1>Eva, eu te amo</h1>
-        <h2>Você é meu lugar seguro 💕</h2>
+    <div class="card" id="box">
+        <p>1️⃣ Você sabe que é a pessoa mais importante da minha vida?</p>
 
-        <!-- Música do d4vd -->
-        <div class="music">
-            <iframe width="100%" height="180"
-                src="https://www.youtube.com/embed/B7Y4LHbpXv0?rel=0"
-                title="d4vd - Here With Me"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <div class="buttons">
+            <button class="yes" onclick="next()">Sim 💕</button>
+            <button class="no" onmouseover="fugir(this)" ontouchstart="fugir(this)">Não 😭</button>
         </div>
-
-        <div class="card">
-            <p>
-                Eva, você é a melhor parte de mim.<br>
-                Pensar em você já muda meu dia inteiro.
-            </p>
-        </div>
-
-        <div class="card">
-            <p>
-                Seu sorriso é minha calma.<br>
-                Seu nome é meu pensamento favorito.
-            </p>
-        </div>
-
-        <div class="card">
-            <p>
-                Se eu tivesse que escolher de novo,<br>
-                escolheria você. Sempre.
-            </p>
-        </div>
-
-        <div class="card">
-            <p>
-                Eu prometo estar ao seu lado,<br>
-                te amar nos dias bons e nos difíceis. 💖
-            </p>
-        </div>
-
-        <footer>
-            Feito com todo meu amor, só pra você 💗
-        </footer>
     </div>
+</div>
+
+<script>
+let step = 1;
+
+function next() {
+    const box = document.getElementById("box");
+
+    if (step === 1) {
+        box.innerHTML = pergunta(
+            "2️⃣ Você sente o quanto eu te amo todos os dias?"
+        );
+    } 
+    else if (step === 2) {
+        box.innerHTML = pergunta(
+            "3️⃣ Você aceita continuar sorrindo comigo?"
+        );
+    } 
+    else if (step === 3) {
+        box.innerHTML = pergunta(
+            "4️⃣ Você promete caminhar comigo em todos os momentos?"
+        );
+    } 
+    else if (step === 4) {
+        box.innerHTML = pergunta(
+            "5️⃣ Você quer ser meu amor hoje, amanhã e sempre?"
+        );
+    } 
+    else {
+        box.innerHTML = `
+            <h2>Então é pra sempre 💖</h2>
+            <p>Eu te amo mais do que palavras conseguem explicar, Nic.</p>
+
+            <div class="space-hearts">
+            💗 💘 💗 💗 💗 💗 💗 💗 💗 💗<br>
+            💗 💗 💕 💗 💗 💗 💗 💗 💗 💗<br>
+            💗 💗 💗 💝 💗 💗 💗 💗 💗 💗<br>
+            💗 💗 💗 💗 💓 💗 💗 💗 💗 💗<br>
+            💗 💗 💗 💗 💗 ❤️‍🔥 💗 💗 💗 💗
+            💗 💗 💗 💗 💗 💗 💝 💗 💗 💗
+            💗 💗 💗 💗 💗 💗 💗 💓 💗 💗
+                
+            </div>
+        `;
+    }
+
+    step++;
+}
+
+function pergunta(texto) {
+    return `
+        <p>${texto}</p>
+        <div class="buttons">
+            <button class="yes" onclick="next()">Sim 💖</button>
+            <button class="no" onmouseover="fugir(this)" ontouchstart="fugir(this)">Não 😅</button>
+        </div>
+    `;
+}
+
+function fugir(botao) {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    botao.style.transform = "translate(" + x + "px," + y + "px)";
+}
+</script>
 
 </body>
 </html>
